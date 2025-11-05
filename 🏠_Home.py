@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 
-sidebar.show()
+sidebar.render_sidebar()
 
 st.toast("Welcome to Ducky!", icon="🐥")
 

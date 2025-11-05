@@ -14,7 +14,7 @@ st.set_page_config(
 
 st.header("Learning Topics")
 
-sidebar.show()
+sidebar.render_sidebar()
 
 # Add a sidebar option to select a learner level
 learner_level = st.sidebar.selectbox("I'd like my answer as if I were a:",

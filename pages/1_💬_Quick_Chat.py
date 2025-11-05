@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-sidebar.show()
+sidebar.render_sidebar()
 
 st.header("Quick Chat")
 st.write("Get instant answers to your software development and coding questions.")

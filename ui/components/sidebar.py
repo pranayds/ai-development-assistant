@@ -1,9 +1,9 @@
 import streamlit as st
 
 
-def show() -> None:
+def render_sidebar() -> None:
     """
-    Displays the sidebar with the Ducky logo and a reload button.
+    Render the sidebar with the Ducky logo and a reload button.
 
     This function creates a consistent sidebar across all pages of the application,
     including the Ducky logo with version number and a reload button that clears
