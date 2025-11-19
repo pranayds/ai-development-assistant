@@ -1,5 +1,4 @@
-# Environment variables
-.env
+
 
 # Python
 __pycache__/
@@ -29,8 +28,6 @@ venv/
 ENV/
 env/
 
-# UV
-uv.lock
 
 # IDEs
 .vscode/
