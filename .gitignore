@@ -47,5 +47,7 @@ env/
 *.temp
 
 # Project-specific exclusions
-data/
+# Keep data/sandbox directory structure but ignore its contents
+data/sandbox/*
+!data/sandbox/.gitkeep
 testing/
