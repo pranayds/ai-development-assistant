@@ -31,7 +31,7 @@ topic = st.text_input("What would you like to learn about?", placeholder="Ask ab
 answer_button = st.button("Get Answer&nbsp;&nbsp;➠", type="primary")
 
 if answer_button or answer_button_sb:
-    advice = st.markdown("### Ducky...")
+    advice = st.markdown("### Generating...")
     learning_prompt = services.prompts.learning_prompt(learner_level, response_format, topic)
     messages = services.llm.create_conversation_starter(services.prompts.system_learning_prompt())
     messages.append({"role": "user", "content": learning_prompt})

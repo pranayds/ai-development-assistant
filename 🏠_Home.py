@@ -5,15 +5,15 @@ from ui.components import sidebar
 
 
 st.set_page_config(
-    page_title="Ducky",
-    page_icon="🐥",
+    page_title="AI Dev Assistant",
+    page_icon="🤖",
     layout="wide"
 )
 
 
 sidebar.render_sidebar()
 
-st.toast("Welcome to Ducky!", icon="🐥")
+st.toast("Welcome to AI Development Assistant!", icon="🤖")
 
-st.markdown("Welcome to Ducky, your AI-powered software developer assistant!")
-st.write("Ducky is designed to help you deliver software faster and better.")
+st.markdown("Welcome to AI Development Assistant, your AI-powered software development companion!")
+st.write("Built to help you deliver software faster and better with intelligent AI assistance.")

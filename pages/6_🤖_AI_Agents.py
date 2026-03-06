@@ -1,13 +1,13 @@
 """
 AI Agents - Chat interface with ReAct-style agent loop
-Adapted from cs5740-project-agents with Cline-inspired UI
+Autonomous agent system with tool integration and persona-based interactions
 """
 
 import asyncio
 import streamlit as st
 from datetime import datetime
 
-# Import services - adapted from agent-cli for Ducky integration
+# Import services - agent system integration
 from services.agent_loop import agent_loop_streaming, create_agent_system_prompt
 from services.personas import get_available_personas, load_persona, get_persona_info
 from ui.components.code_editor import render_code_editor
@@ -15,7 +15,7 @@ from ui.components.sidebar import render_sidebar
 
 st.set_page_config(page_title="AI Agents", layout="wide")
 
-# Render sidebar with Ducky logo and reload button
+# Render sidebar with logo and reload button
 render_sidebar()
 
 # Custom CSS for proper side padding matching AI Code Assistant page
@@ -326,7 +326,7 @@ with col1:
     </style>
     """, unsafe_allow_html=True)
     
-    # Persona selector - loads from cs5740-personas repo
+    # Persona selector - loads from personas directory
     available_personas = get_available_personas()
     
     # Row 1: Label only

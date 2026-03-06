@@ -1,6 +1,5 @@
 """
 Built-in file operation tools for the agent.
-Adapted from cs5740-project-agents/agent-cli/tools.py
 All operations are sandboxed to data/sandbox/ directory.
 """
 import os
@@ -331,7 +330,6 @@ def search_files(directory_path: str, pattern: str, case_sensitive: bool = False
 
 
 # Tool schemas for OpenAI function calling
-# Adapted from agent-cli/tools.py for use with Ducky
 TOOL_SCHEMAS = [
     {
         "type": "function",

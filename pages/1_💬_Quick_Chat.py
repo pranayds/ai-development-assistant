@@ -3,7 +3,7 @@ import asyncio
 
 from services import prompts
 from ui.components import sidebar
-from ui.interactions import chat_handler, book_handler
+from ui.interactions import chat_handler
 
 st.set_page_config(
     page_title="Quick Chat",

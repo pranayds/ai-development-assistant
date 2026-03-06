@@ -3,10 +3,10 @@ import streamlit as st
 
 def render_sidebar() -> None:
     """
-    Render the sidebar with the Ducky logo and a reload button.
+    Render the sidebar with the app logo and a reload button.
 
     This function creates a consistent sidebar across all pages of the application,
-    including the Ducky logo with version number and a reload button that clears
+    including the logo with version number and a reload button that clears
     the session state and reruns the application.
 
     Returns:
@@ -16,7 +16,7 @@ def render_sidebar() -> None:
         st.markdown(f"""
             <a href="/" style="color:black;text-decoration: none;">
                 <div style="display:table;margin-left:0%;">
-                    <img src="app/static/logo.png" width="80"><span style="color: white">&nbsp;Ducky</span>
+                    <img src="app/static/logo.png" width="80"><span style="color: white">&nbsp;AI Dev Assistant</span>
                     <span style="font-size: 0.8em; color: grey">&nbsp;&nbsp;v0.1.2</span>
                 </div>
             </a>

@@ -1,5 +1,8 @@
-# Use the prebuilt cs5740-base image
-FROM container.cs.vt.edu/steve72/cs5740-base:latest
+# Use official Python image
+FROM python:3.12-slim
+
+# Install UV package manager
+RUN pip install uv
 
 # Set working directory inside the container
 WORKDIR /app

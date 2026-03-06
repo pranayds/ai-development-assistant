@@ -1,6 +1,6 @@
 """
 Agent Loop implementation using ReAct pattern.
-Adapted from cs5740-project-agents/agent-cli/agent-cli.py for Streamlit integration.
+Implements autonomous agent workflow with tool usage for Streamlit integration.
 """
 import json
 import logging

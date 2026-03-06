@@ -1,14 +1,13 @@
 """
 Persona management for AI Agents.
-Loads personas from cs5740-personas repository.
+Loads personas from the personas directory.
 """
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 
 # Persona definitions - mapping display names to file paths
-# Using specific named personas from cs5740-personas
-# Requirement: At least 3 types × at least 3 personas each = 9+ personas
+# Multiple persona types with different specializations
 PERSONAS: Dict[str, Dict[str, str]] = {
     # Default option - no persona
     "None - Default Agent": {
@@ -19,51 +18,51 @@ PERSONAS: Dict[str, Dict[str, str]] = {
     
     # Type 1: QA Engineers - 3 personas
     "Qa Engineers: Jack": {
-        "path": "cs5740-personas/personas/quality_testing/qa_engineers/Jack.md",
+        "path": "personas/quality_testing/qa_engineers/Jack.md",
         "category": "Quality & Testing",
         "description": "QA Engineer focused on systematic testing"
     },
     "Qa Engineers: Alex-QA": {
-        "path": "cs5740-personas/personas/quality_testing/qa_engineers/Alex-QA.md",
+        "path": "personas/quality_testing/qa_engineers/Alex-QA.md",
         "category": "Quality & Testing",
         "description": "QA Engineer with automation expertise"
     },
     "Qa Engineers: Bob": {
-        "path": "cs5740-personas/personas/quality_testing/qa_engineers/Bob.md",
+        "path": "personas/quality_testing/qa_engineers/Bob.md",
         "category": "Quality & Testing",
         "description": "QA Engineer with test planning focus"
     },
     
     # Type 2: Software Engineers - 3 personas
     "Software Engineers: Ari": {
-        "path": "cs5740-personas/personas/development/software_engineers/Ari.md",
+        "path": "personas/development/software_engineers/Ari.md",
         "category": "Development",
         "description": "Software Engineer focused on clean code"
     },
     "Software Engineers: Emily": {
-        "path": "cs5740-personas/personas/development/software_engineers/Emily.md",
+        "path": "personas/development/software_engineers/Emily.md",
         "category": "Development",
         "description": "Software Engineer with full-stack expertise"
     },
     "Software Engineers: Bluey": {
-        "path": "cs5740-personas/personas/development/software_engineers/Bluey.md",
+        "path": "personas/development/software_engineers/Bluey.md",
         "category": "Development",
         "description": "Software Engineer focused on architecture"
     },
     
     # Type 3: Product Managers - 3 personas
     "Product Managers: Alex-Agile-PM": {
-        "path": "cs5740-personas/personas/planning_requirements/product_managers/Alex-Agile-PM.md",
+        "path": "personas/planning_requirements/product_managers/Alex-Agile-PM.md",
         "category": "Planning & Requirements",
         "description": "Agile Product Manager focused on user value"
     },
     "Product Managers: Jordan": {
-        "path": "cs5740-personas/personas/planning_requirements/product_managers/Jordan.md",
+        "path": "personas/planning_requirements/product_managers/Jordan.md",
         "category": "Planning & Requirements",
         "description": "Product Manager with strategic focus"
     },
     "Product Managers: Taylor": {
-        "path": "cs5740-personas/personas/planning_requirements/product_managers/Taylor.md",
+        "path": "personas/planning_requirements/product_managers/Taylor.md",
         "category": "Planning & Requirements",
         "description": "Product Manager focused on roadmap planning"
     }
@@ -83,7 +82,7 @@ def get_project_root() -> Path:
 
 def load_persona(persona_name: str) -> str:
     """
-    Load a persona's content from the cs5740-personas repository.
+    Load a persona's content from the personas directory.
     
     Args:
         persona_name: Name of the persona (key from PERSONAS dict)

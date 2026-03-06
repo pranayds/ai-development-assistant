@@ -46,8 +46,18 @@ env/
 *.tmp
 *.temp
 
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
 # Project-specific exclusions
 # Keep data/sandbox directory structure but ignore its contents
 data/sandbox/*
 !data/sandbox/.gitkeep
 testing/
+
+# Generated embeddings and cached data
+*.embeddings.csv
+*.pkl
+*.cache

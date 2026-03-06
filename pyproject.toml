@@ -1,7 +1,7 @@
 [project]
-name = "cs5740-project-coding"
+name = "ai-development-assistant"
 version = "2025.09"
-description = "Ducky - AI-powered software developer assistant"
+description = "AI Development Assistant - AI-powered software development companion"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
