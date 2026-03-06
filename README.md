@@ -1,77 +1,100 @@
-# 🤖 AI Development Assistant
+# AI Development Assistant
 
-A comprehensive AI-powered development assistant built with Streamlit, featuring intelligent chat, requirements engineering, code assistance, and autonomous AI agents with persona-based interactions.
+A Python-based AI development tool featuring intelligent chat, requirements engineering, code assistance, and autonomous agents. This system integrates multiple LLM-powered capabilities through a modular architecture with persona-based interactions and real-time streaming responses.
 
-![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)
-![Docker](https://img.shields.io/badge/docker-ready-brightgreen.svg)
+## Features
 
-## 🌟 Features
+- Interactive Chat Interface: Streaming LLM responses with conversation history and context management
+- Requirements Engineering: Automated generation of business documents, vision statements, and project plans
+- Code Assistant: Integrated code review, debugging, and modification with Monaco editor
+- Autonomous Agents: ReAct-pattern agents with tool integration and 9 specialized personas
+- Learning Topics: AI-powered explanations and educational content generation
 
-- **💬 AI Chat** - Interactive chat with streaming responses and context awareness
-- **📓 Requirements Engineering** - Generate business documents, vision statements, and project plans
-- **🤖 Code Assistant** - Code review, debugging, and modification with Monaco editor
-- **🤖 AI Agents** - Autonomous agents with 9 personas (Professional, Creative, Teacher, etc.) and tool integration
+## Technical Highlights
 
-## 🚀 Quick Start
+### Architecture
+
+**Service Layer Pattern**
+- Separation of business logic from UI components
+- Modular prompt engineering with centralized templates
+- Reusable service modules for LLM interactions, embeddings, and agent workflows
+
+**Agent System**
+- ReAct (Reasoning + Acting) pattern implementation
+- Tool abstraction layer supporting file operations, web search, and calculations
+- Persona-based system prompts for specialized agent behaviors
+
+**Streaming Implementation**
+- Real-time token streaming from OpenAI-compatible APIs
+- Async/await patterns for non-blocking UI updates
+- Session state management for conversation persistence
+
+### Technology Stack
+
+- Framework: Streamlit (Python web framework)
+- LLM Integration: OpenAI API (compatible with Azure OpenAI, Ollama, LM Studio)
+- Embeddings: sentence-transformers (local) or OpenAI API
+- Code Editor: streamlit-monaco
+- Containerization: Docker with UV package manager
+- Dependencies: 93 packages including PyTorch, transformers, and pandas
+
+## Setup
 
 ```bash
-# Clone and setup
-git clone https://github.com/yourusername/ai-development-assistant.git
+# Clone repository
+git clone https://github.com/pranayds/ai-development-assistant.git
 cd ai-development-assistant
+
+# Install dependencies
 uv sync
-cp .env.example .env  # Add your OpenAI API key
 
-# Run
+# Configure environment
+cp .env.example .env
+# Edit .env with your OpenAI API key
+
+# Run application
 uv run streamlit run 🏠_Home.py
-# Open http://localhost:8501
+```
 
-# Or use Docker
+Access at `http://localhost:8501`
+
+### Docker Deployment
+
+```bash
 docker build -t ai-dev-assistant .
 docker run -p 8501:8501 ai-dev-assistant
 ```
 
-## 📁 Project Structure
+## Configuration
+
+The `.env` file supports multiple LLM providers:
+
+- OpenAI: Standard OpenAI API
+- Azure OpenAI: Enterprise Azure deployment
+- Local Models: Ollama, LM Studio, or other OpenAI-compatible endpoints
+
+Embedding options include local sentence-transformers or OpenAI API.
+
+## Project Structure
 
 ```
 ai-development-assistant/
-├── 🏠_Home.py                      # Main application entry point
-├── pages/                          # Streamlit pages
-├── services/                       # Business logic layer
-├── ui/                            # UI components
-├── personas/                      # Persona definitions
-├── data/                          # Data storage
-├── .env.example                   # Environment template
-├── .gitignore                     # Git exclusions
-├── Dockerfile                     # Container configuration
-├── pyproject.toml                 # Python dependencies
-└── README.md                      # This file
-```
-
-## 🔧 Configuration
-
-Configure `.env` with your API credentials. Supports OpenAI, Azure OpenAI, and local models (Ollama, LM Studio).
-
-## 🏗️ Architecture
-
-### Technology Stack
-
-- **Frontend**: Streamlit (Python web framework)
-- **LLM Integration**: OpenAI-compatible APIs
-- **Embeddings**: sentence-transformers (local) or OpenAI API
-- **Code Editor**: streamlit-monaco
-- **Containerization**: Docker
-- **Package Management**: UV (fast Python package manager)
-
-### Key Design Patterns
-
-- **Service Layer**: Business logic separated from UI
-- **Component-Based UI**: Reusable Streamlit components
-- **Streaming Responses**: Real-time LLM output streaming
-- **State Management**: Streamlit session state for conversation history
-- **Modular Prompts**: Centralized prompt engineering
-- **Tool Abstraction**: Pluggable agent tools
-
----
-
-**Built with Python, Streamlit, and OpenAI APIs**
+├── 🏠_Home.py                  # Application entry point
+├── pages/                      # Streamlit page modules
+│   ├── 1_💬_Quick_Chat.py
+│   ├── 2_🎓_Learning_Topics.py
+│   ├── 3_📓_Requirements.py
+│   ├── 4_🔧_AI_Code_Assistant.py
+│   └── 6_🤖_AI_Agents.py
+├── services/                   # Business logic layer
+│   ├── agent_loop.py          # ReAct agent implementation
+│   ├── agent_tools.py         # Tool definitions and schemas
+│   ├── llm.py                 # LLM API integration
+│   ├── personas.py            # Persona management
+│   └── prompts.py             # Prompt templates
+├── ui/                        # UI components
+│   ├── components/            # Reusable Streamlit components
+│   └── interactions/          # User interaction handlers
+├── personas/                  # Persona definitions (9 specialized agents)
+├── data/                      # Data storage and sandbox
+└── pyproject.toml            # Python dependencies
